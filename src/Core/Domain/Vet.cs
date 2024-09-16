@@ -11,6 +11,8 @@ namespace Domain
         public string Name { get; set; }
         public string Family { get; set; }
         public string Specialty { get; set; }
+        public List<Appointment> Appointments { get; set; }
+        public List<DateTime> AvailableTimes { get; set; } // Doctor's available times
 
     }
 }
