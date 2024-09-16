@@ -14,6 +14,8 @@ namespace Domain
         public double Weight { get; set; }
 
         public Client ClientId { get; set; }
+        public Client Client { get; set; }
+        public List<Appointment> Appointments { get; set; }
 
         List<Grooming> groomings {  get; set; }
     }

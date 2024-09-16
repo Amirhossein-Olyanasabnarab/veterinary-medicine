@@ -14,5 +14,7 @@ namespace Domain
         public Client Client { get; set; }
         public int VetId { get; set; }
         public Vet Vet { get; set; }
+        public int PetId { get; set; }
+        public Pet Pet { get; set; }
     }
 }
