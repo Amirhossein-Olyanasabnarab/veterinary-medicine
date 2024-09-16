@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Appintment : BaseEntity
+    public class Appointment : BaseEntity
     {
         public DateTime DateTime { get; set; }
     }
