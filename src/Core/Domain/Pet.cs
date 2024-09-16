@@ -12,5 +12,9 @@ namespace Domain
         public string Breed { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
+
+        public Client ClientId { get; set; }
+
+        List<Grooming> groomings {  get; set; }
     }
 }
