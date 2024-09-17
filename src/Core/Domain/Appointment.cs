@@ -8,7 +8,7 @@ namespace Domain
 {
     public class Appointment : BaseEntity
     {
-        public DateTime AppintmentDataTime { get; set; }  //Time slot booked
+        public DateTime AppointmentDataTime { get; set; }  //Time slot booked
 
         public int ClientId { get; set; }  // Foreign Key
         public Client Client { get; set; }  // Navigation Property
