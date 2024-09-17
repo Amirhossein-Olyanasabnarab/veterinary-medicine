@@ -8,13 +8,14 @@ namespace Domain
 {
     public class Client : BaseEntity
     {
-        public string Name { get; set; }
-        public string Family { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public List<Pet> Pets { get; set; }
-        public List<Appointment> Appointments { get; set; }
-        public List<Grooming> Groomings { get; set; }
+
+        public List<Pet> Pets { get; set; }  // One-to-Many relationship with Pets
+        public List<Appointment> Appointments { get; set; }  // One-to-Many relationship with Appointments
+        public List<Grooming> Groomings { get; set; }  // One-to-Many relationship with Groomings
 
     }
 }

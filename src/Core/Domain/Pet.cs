@@ -13,10 +13,10 @@ namespace Domain
         public int Age { get; set; }
         public double Weight { get; set; }
 
-        public Client ClientId { get; set; }
-        public Client Client { get; set; }
-        public List<Appointment> Appointments { get; set; }
+        public Client ClientId { get; set; }  // Foreign Key
+        public Client Client { get; set; }  // Navigation Property
+        public List<Appointment> Appointments { get; set; }  // One-to-Many relationship with Appointments
 
-        List<Grooming> groomings {  get; set; }
+        public List<Grooming> groomings {  get; set; }  // One-to-Many relationship with Groomings
     }
 }
