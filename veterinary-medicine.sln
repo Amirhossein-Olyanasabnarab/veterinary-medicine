@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E23A9893-BA50-48DF-87C7-101E9F90926A}"
-	ProjectSection(SolutionItems) = preProject
-		src\Core\Domain\Database_Relations.cs = src\Core\Domain\Database_Relations.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{27DC5FA9-F282-4F7A-B86F-361977486394}"
 EndProject
