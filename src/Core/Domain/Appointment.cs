@@ -12,9 +12,9 @@ namespace Domain
 
         public int ClientId { get; set; }  // Foreign Key
         public Client Client { get; set; }  // Navigation Property
-        public int? VetId { get; set; }  // Nullable Foreign Key (either a Vet or Grooming)
+        public Guid? VetId { get; set; }  // Nullable Foreign Key (either a Vet or Grooming)
         public Vet Vet { get; set; }  // Navigation Property
-        public int? GroomingId { get; set; }  // Nullable Foreign Key
+        public Guid? GroomingId { get; set; }  // Nullable Foreign Key
         public Grooming Grooming { get; set; }  // Navigation Property
 
     }

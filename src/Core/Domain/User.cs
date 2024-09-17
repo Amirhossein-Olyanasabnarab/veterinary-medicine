@@ -11,7 +11,7 @@ namespace Domain
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public int RoleId { get; set; }  // Foreign Key
+        public Guid RoleId { get; set; }  // Foreign Key
         public Role Role { get; set; } // Navigation Property
     }
 }
