@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E23A9893-BA50-48DF-87C7-101E9F90926A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Core\Domain\Database_Relations.cs = src\Core\Domain\Database_Relations.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{27DC5FA9-F282-4F7A-B86F-361977486394}"
 EndProject
@@ -17,11 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Core\Contr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServices", "src\Core\ApplicationServices\ApplicationServices.csproj", "{33638267-DBA5-4409-9293-45A8AE3DD338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Infrastructure\Api\Api.csproj", "{AB40EAC9-7A7E-4AD4-9EAC-684691935CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Infrastructure\Api\Api.csproj", "{AB40EAC9-7A7E-4AD4-9EAC-684691935CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Sql", "src\Infrastructure\Data.Sql\Data.Sql.csproj", "{CD3A7F44-E443-4B5C-B45E-26906327DCCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Sql", "src\Infrastructure\Data.Sql\Data.Sql.csproj", "{CD3A7F44-E443-4B5C-B45E-26906327DCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Mongo", "src\Infrastructure\Data.Mongo\Data.Mongo.csproj", "{AEEAD93F-DCAB-4B02-A6CE-B1C63BB5FA91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Mongo", "src\Infrastructure\Data.Mongo\Data.Mongo.csproj", "{AEEAD93F-DCAB-4B02-A6CE-B1C63BB5FA91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
