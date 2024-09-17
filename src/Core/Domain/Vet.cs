@@ -8,11 +8,12 @@ namespace Domain
 {
     public class Vet : BaseEntity
     {
-        public string Name { get; set; }
-        public string Family { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Specialty { get; set; }
-        public List<Appointment> Appointments { get; set; }
-        public List<DateTime> AvailableTimes { get; set; } // Doctor's available times
+
+        public List<Appointment> Appointments { get; set; }  // One-to-Many relationship with Appointments
+        public List<Schedule> AvailableTimes { get; set; } // Doctor's available times
 
     }
 }
