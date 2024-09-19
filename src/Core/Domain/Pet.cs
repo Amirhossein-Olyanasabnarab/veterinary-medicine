@@ -12,6 +12,7 @@ namespace Domain
         public string Breed { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
+        public string Sex { get; set; }
 
         public Guid ClientId { get; set; }  // Foreign Key
         public Client Client { get; set; }  // Navigation Property
