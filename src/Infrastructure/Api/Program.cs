@@ -1,6 +1,8 @@
 using ApplicationServices.Vets;
 using Contracts;
+using Data.Sql.Context;
 using Data.Sql.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVetService, VetService>();
 builder.Services.AddScoped<IVetRepository, VetSqlRepository>();
 
+builder.Services.AddDbContext<ApplicationContext>
+    (option => option.UseSqlServer
+        (builder.Configuration.GetConnectionString("DefaultConnection"))
+     );
 
 var app = builder.Build();
 
