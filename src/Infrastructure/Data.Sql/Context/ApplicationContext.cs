@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Data.Sql.Configurations;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,11 @@ namespace Data.Sql.Context
             
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new PetConfiguration());
+        }
         public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
