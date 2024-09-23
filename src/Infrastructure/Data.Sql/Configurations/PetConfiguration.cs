@@ -20,6 +20,7 @@ namespace Data.Sql.Configurations
             builder.Property(p => p.Breed).IsRequired().HasMaxLength(50);
             builder.Property(p => p.Sex).IsRequired().HasMaxLength(10);
             builder.Property(p => p.Age).IsRequired();
+            builder.Property(p => p.Species).IsRequired().HasMaxLength(50);
 
             builder.HasOne(p => p.Owner).WithMany(o => o.Pets)
                 .HasForeignKey(p => p.OwnerId)
