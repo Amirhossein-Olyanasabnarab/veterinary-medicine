@@ -23,6 +23,8 @@ namespace Data.Sql.Context
             modelBuilder.ApplyConfiguration(new OwnerConfiguration());
             modelBuilder.ApplyConfiguration(new VetConfiguration());
             modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
+            modelBuilder.ApplyConfiguration(new ServiceConfiguration());
+            modelBuilder.ApplyConfiguration(new MedicalRecordConfiguration());
         }
         public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
