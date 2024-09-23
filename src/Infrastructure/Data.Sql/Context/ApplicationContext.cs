@@ -21,6 +21,7 @@ namespace Data.Sql.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new PetConfiguration());
             modelBuilder.ApplyConfiguration(new OwnerConfiguration());
+            modelBuilder.ApplyConfiguration(new VetConfiguration());
         }
         public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
