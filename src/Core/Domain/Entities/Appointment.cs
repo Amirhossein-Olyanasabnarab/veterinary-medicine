@@ -8,21 +8,24 @@ namespace Domain.Entities
 {
     public class Appointment : BaseEntity
     {
+        public DateTime AppointmentDate { get; set; }
+        public string Notes { get; set; }
+        //Relation to Pet
         public Guid PetId { get; set; }
         public Pet Pet { get; set; }
-        public Guid OwnerId { get; set; }
-        public Owner Owner { get; set; }
+        //Relation to Vet
         public Guid VetId { get; set; }
         public Vet Vet { get; set; }
-
-        public List<Service> Services { get; set; }
-        public decimal TotalCoast
-        {
-            get
-            {
-                return Services.Sum(s => s.Price);
-            }
-        }
-        public string Notes { get; set; }
+      
+        //Relation to Service
+        public ICollection<Service> Services { get; set; }
+        //public decimal TotalCoast
+        //{
+        //    get
+        //    {
+        //        return Services.Sum(s => s.Price);
+        //    }
+        //}
+        
     }
 }

@@ -14,8 +14,13 @@ namespace Domain.Entities
         public int Age { get; set; }
         public double Weight { get; set; }
         public string Sex { get; set; }
+
+        //Relation to Owner
         public Guid OwnerId { get; set; }
         public Owner Owner { get; set; }
-        public List<MedicalRecord> MedicalRecords { get; set; }
+        //Relation to Appointment
+        public ICollection<Appointment> Appointments { get; set; }
+        //Relation to MedicalRecord
+        public ICollection<MedicalRecord> MedicalRecords { get; set; }
     }
 }

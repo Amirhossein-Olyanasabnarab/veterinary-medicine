@@ -14,7 +14,8 @@ namespace Domain.Entities
         public string Email { get; set; }
         public string Specialty { get; set; }
 
-        public List<Appointment> Appointments { get; set; }
+        //Relation to Appointment
+        public ICollection<Appointment> Appointments { get; set; }
 
 
     }
