@@ -8,14 +8,19 @@ namespace Domain
 {
     public class Appointment : BaseEntity
     {
-        public DateTime AppointmentDataTime { get; set; }  //Time slot booked
+        public Guid PetId { get; set; }
+        public Pet Pet { get; set; }
+        public Guid OwnerId { get; set; }
+        public Owner Owner { get; set; }
+        public Guid VetId { get; set; }
+        public Vet Vet { get; set; }
 
-        public int ClientId { get; set; }  // Foreign Key
-        public Client Client { get; set; }  // Navigation Property
-        public Guid? VetId { get; set; }  // Nullable Foreign Key (either a Vet or Grooming)
-        public Vet Vet { get; set; }  // Navigation Property
-        public Guid? GroomingId { get; set; }  // Nullable Foreign Key
-        public Grooming Grooming { get; set; }  // Navigation Property
-
+        public List<Service> Services { get; set; }
+        public decimal TotalCoast { get
+            {
+                return Services.Sum(s => s.Price);
+            } 
+        }
+        public string Notes { get; set; }
     }
 }
