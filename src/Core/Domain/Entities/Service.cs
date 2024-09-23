@@ -12,5 +12,6 @@ namespace Domain.Entities
         public ServiceType Type { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
+        public ICollection<Appointment> Appointments { get; set; }
     }
 }

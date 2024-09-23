@@ -16,9 +16,10 @@ namespace Domain.Entities
         //Relation to Vet
         public Guid VetId { get; set; }
         public Vet Vet { get; set; }
-      
+
         //Relation to Service
-        public ICollection<Service> Services { get; set; }
+        public Guid ServiceId { get; set; }
+        public Service Service { get; set; }
         //public decimal TotalCoast
         //{
         //    get
@@ -26,6 +27,6 @@ namespace Domain.Entities
         //        return Services.Sum(s => s.Price);
         //    }
         //}
-        
+
     }
 }
