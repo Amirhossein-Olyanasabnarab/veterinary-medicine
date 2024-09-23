@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class Vet : BaseEntity
     {
@@ -14,8 +14,8 @@ namespace Domain
         public string Email { get; set; }
         public string Specialty { get; set; }
 
-        public List<Appointment> Appointments { get; set; }  
-     
+        public List<Appointment> Appointments { get; set; }
+
 
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class BaseEntity
     {
@@ -13,9 +13,9 @@ namespace Domain
         public DateTime UpdatedAt { get; set; }
 
         public void UpdateTimeStamp()
-        { 
-        
-        UpdatedAt = DateTime.Now;
+        {
+
+            UpdatedAt = DateTime.Now;
         }
     }
 }
