@@ -10,10 +10,12 @@ namespace Domain
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
         public string Specialty { get; set; }
 
-        public List<Appointment> Appointments { get; set; }  // One-to-Many relationship with Appointments
-        public List<Schedule> AvailableTimes { get; set; } // Doctor's available times
+        public List<Appointment> Appointments { get; set; }  
+     
 
     }
 }
