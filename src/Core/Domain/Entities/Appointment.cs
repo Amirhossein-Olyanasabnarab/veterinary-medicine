@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class Appointment : BaseEntity
     {
@@ -16,10 +16,12 @@ namespace Domain
         public Vet Vet { get; set; }
 
         public List<Service> Services { get; set; }
-        public decimal TotalCoast { get
+        public decimal TotalCoast
+        {
+            get
             {
                 return Services.Sum(s => s.Price);
-            } 
+            }
         }
         public string Notes { get; set; }
     }
