@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities.Common;
 
 namespace Domain.Entities
 {
@@ -16,7 +17,7 @@ namespace Domain.Entities
 
         //Relation to Appointment
         public ICollection<Appointment> Appointments { get; set; }
-        public ICollection<MedicalRecord> MedicalRecords { get; set; }
+       
 
 
     }

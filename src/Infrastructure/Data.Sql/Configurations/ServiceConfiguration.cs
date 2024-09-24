@@ -18,6 +18,11 @@ namespace Data.Sql.Configurations
             builder.Property(s => s.Type).IsRequired();
             builder.Property(s => s.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(s => s.Description).HasMaxLength(200);
+
+            builder.HasOne(s => s.Appointment)
+                .WithMany(a => a.Services)
+                .HasForeignKey(a => a.AppointmentId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

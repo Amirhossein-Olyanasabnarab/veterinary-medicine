@@ -20,17 +20,11 @@ namespace Data.Sql.Configurations
             builder.Property(m => m.Treatment).HasMaxLength(500);
             builder.Property(m => m.Medication).HasMaxLength(200);
 
-            //Link to Pet
             builder.HasOne(m => m.Pet)
                 .WithMany(p => p.MedicalRecords)
-                .HasForeignKey(m => m.Pet.Id)
+                .HasForeignKey(m => m.PetId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            //link to Vet
-            builder.HasOne(m => m.Vet)
-                .WithMany(v => v.MedicalRecords)
-                .HasForeignKey(m => m.VetId)
-                .OnDelete(DeleteBehavior.Restrict);
+                
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Data.Sql.Configurations
 
             //Relate to Pet
             builder.HasOne(a => a.Pet)
-                .WithMany(p => p.Appointments)
+                .WithMany(a => a.Appointments)
                 .HasForeignKey(a => a.PetId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -28,12 +28,9 @@ namespace Data.Sql.Configurations
             builder.HasOne(a => a.Vet)
                 .WithMany(v => v.Appointments)
                 .HasForeignKey(a => a.VetId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            //Relate to Service
-            builder.HasOne(a => a.Service).WithMany(s => s.Appointments)
-                .HasForeignKey(a =>a.ServiceId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+         
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Data.Sql.Configurations
             builder.Property(v => v.LastName).IsRequired().HasMaxLength(50);
             builder.Property(v => v.Email).HasMaxLength(100);
             builder.Property(v => v.Specialty).HasMaxLength(100);
+
+
+       
         }
     }
 }

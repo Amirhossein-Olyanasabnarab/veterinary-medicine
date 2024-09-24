@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities.Common;
 
 namespace Domain.Entities
 {
@@ -12,11 +13,7 @@ namespace Domain.Entities
         public string Description { get; set; }
         public string Treatment { get; set; }
         public string Medication { get; set; }
-        //Relation to Pet
         public Guid PetId { get; set; }
         public Pet Pet { get; set; }
-        //Relation to Vet
-        public Guid VetId { get; set; }
-        public Vet Vet { get; set; }
     }
 }

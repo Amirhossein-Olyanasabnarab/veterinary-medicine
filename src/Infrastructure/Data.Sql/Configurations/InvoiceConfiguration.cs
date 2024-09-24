@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,10 +16,10 @@ namespace Data.Sql.Configurations
         {
             builder.ToTable("Invoices");
             builder.HasKey(i => i.Id);
-            builder.Property(i => i.TotalAmount).IsRequired()
-                .HasColumnType("decimal(18,2)");
-            builder.Property(i => i.PaymentStatus).HasMaxLength(20);
-            builder.Property(i => i.IssueDate).IsRequired();
+            builder.Property(i => i.Status).IsRequired();
+            builder.Property(i => i.InvoiceDate).IsRequired();
+
+
         }
     }
 }

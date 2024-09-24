@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Entities.Common;
+using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,23 +12,15 @@ namespace Domain.Entities
     {
         public DateTime AppointmentDate { get; set; }
         public string Notes { get; set; }
-        //Relation to Pet
-        public Guid PetId { get; set; }
-        public Pet Pet { get; set; }
-        //Relation to Vet
+        public AppintmentStatus Status { get; set; }
+
         public Guid VetId { get; set; }
         public Vet Vet { get; set; }
 
-        //Relation to Service
-        public Guid ServiceId { get; set; }
-        public Service Service { get; set; }
-        //public decimal TotalCoast
-        //{
-        //    get
-        //    {
-        //        return Services.Sum(s => s.Price);
-        //    }
-        //}
+        public Guid PetId { get; set; }
+        public Pet Pet { get; set; }
+
+        public ICollection<Service> Services { get; set; }
 
     }
 }

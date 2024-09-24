@@ -26,6 +26,7 @@ namespace Data.Sql.Context
             modelBuilder.ApplyConfiguration(new ServiceConfiguration());
             modelBuilder.ApplyConfiguration(new MedicalRecordConfiguration());
             modelBuilder.ApplyConfiguration(new InvoiceConfiguration());
+            modelBuilder.ApplyConfiguration(new InvoiceItemConfiguration());
         }
         //public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<Appointment> Appointments { get; set; }

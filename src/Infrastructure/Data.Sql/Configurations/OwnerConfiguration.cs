@@ -20,7 +20,7 @@ namespace Data.Sql.Configurations
             builder.Property(o => o.LastName).IsRequired().HasMaxLength(50);
             builder.Property(o => o.PhoneNumber).IsRequired().HasMaxLength(20);
             builder.Property(o => o.Email).HasMaxLength(100);
-     
+
         }
 
         //private static bool IsValidEmail(string email)
