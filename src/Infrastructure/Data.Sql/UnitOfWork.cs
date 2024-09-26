@@ -11,9 +11,10 @@ namespace Data.Sql
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationContext _context;
-        public UnitOfWork(ApplicationContext context)
+        public UnitOfWork(ApplicationContext context, IVetRepository vetRepository)
         {
             _context = context;
+            this.Vets = vetRepository;
         }
         public IVetRepository Vets { get ; set; }
 
