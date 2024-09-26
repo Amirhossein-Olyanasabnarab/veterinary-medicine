@@ -20,9 +20,9 @@ namespace Data.Sql
         public IVetRepository Vets { get ; set; }
         public IOwnerRepository Owners { get; set; }
 
-        public async Task<int> CompleteAsync()
+        public void SaveChanges()
         {
-            return await _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
     }
 }

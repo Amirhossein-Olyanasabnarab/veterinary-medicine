@@ -10,6 +10,6 @@ namespace Contracts
     {
         IVetRepository Vets { get; set; }
         IOwnerRepository Owners { get; set; }
-        Task<int> CompleteAsync();
+        void SaveChanges();
     }
 }

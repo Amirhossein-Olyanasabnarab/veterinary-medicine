@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ApplicationServices.Owners
 {
     public interface IOwnerService 
     {
-        Task<OwnerDto> AddNewOwner(string firstName, string lastName, string phoneNumber);
+        OwnerDto AddOwner(String name, string family, string phone);
     }
 }

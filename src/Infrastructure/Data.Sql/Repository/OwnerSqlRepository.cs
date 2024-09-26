@@ -16,9 +16,10 @@ namespace Data.Sql.Repository
         {
             _context = context;
         }
-        public async Task AddOwnerAsync(Owner owner)
+
+        public void AddOwner(Owner owner)
         {
-           await  _context.Owners.AddAsync(owner);
+            _context.Owners.Add(owner);
         }
     }
 }

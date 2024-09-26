@@ -1,4 +1,5 @@
 ﻿using ApplicationServices.Owners;
+using ApplicationServices.Vets;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -13,12 +14,13 @@ namespace Api.Controllers
             _ownerService = ownerService;
         }
         [HttpPost]
-        public async Task<ActionResult<OwnerDto>> AddOwner([FromBody] OwnerDto ownerDto)
+        public ActionResult<OwnerDto> AddOwner(OwnerDto ownerDto)
         {
-            if(!ModelState.IsValid) 
+            if(!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var owner = await _ownerService.AddNewOwner(ownerDto.FirstName, ownerDto.LastName, ownerDto.PhoneNumber);
-            return Ok(owner);
+            var newOwner = _ownerService.AddOwner(ownerDto.FirstName, ownerDto.LastName, ownerDto.PhoneNumber);
+            return ownerDto;
+
         }
     }
 }
