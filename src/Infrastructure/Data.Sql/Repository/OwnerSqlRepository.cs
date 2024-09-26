@@ -6,22 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Sql
+namespace Data.Sql.Repository
 {
-    public class UnitOfWork : IUnitOfWork
+    public class OwnerSqlRepository : IOwnerRepository
     {
         private readonly ApplicationContext _context;
-        public UnitOfWork(ApplicationContext context, IVetRepository vetRepository)
+        public OwnerSqlRepository(ApplicationContext context)
         {
             _context = context;
-            this.Vets = vetRepository;
         }
-        public IVetRepository Vets { get ; set; }
-      
-
-        public void SaveChange()
+        public string AddNewOwner()
         {
             _context.SaveChanges();
+            return "OK";
         }
     }
 }

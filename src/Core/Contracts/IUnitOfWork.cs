@@ -9,6 +9,7 @@ namespace Contracts
     public interface IUnitOfWork
     {
         IVetRepository Vets { get; set; }
+        IOwnerRepository Owners { get; set; }
         void SaveChange();
     }
 }

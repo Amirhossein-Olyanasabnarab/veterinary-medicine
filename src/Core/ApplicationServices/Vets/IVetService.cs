@@ -9,6 +9,6 @@ namespace ApplicationServices.Vets
 {
     public interface IVetService 
     {
-        string GetVetById(Guid id);
+        VetDto GetVetById(Guid id);
     }
 }

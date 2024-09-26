@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationServices.Owners
 {
-    public interface IOwnerService
+    public interface IOwnerService 
     {
+        OwnerDto AddNewOwner(string firstName, string lastName, string phoneNumber);
     }
 }
