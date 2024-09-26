@@ -1,5 +1,6 @@
 using ApplicationServices.Vets;
 using Contracts;
+using Data.Sql;
 using Data.Sql.Context;
 using Data.Sql.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVetService, VetService>();
 builder.Services.AddScoped<IVetRepository, VetSqlRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDbContext<ApplicationContext>
     (option => option.UseSqlServer
