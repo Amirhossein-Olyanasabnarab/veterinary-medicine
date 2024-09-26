@@ -17,6 +17,8 @@ namespace ApplicationServices.Vets
         public VetDto GetVetById(Guid id)
         {
             var vet = _vetRepository.GetVetById(id);
+            if (vet == null)
+                throw new Exception("There doesn't exist any vet.");
             return new VetDto
             {
                 FirstName = $"First name is {vet.FirstName}",

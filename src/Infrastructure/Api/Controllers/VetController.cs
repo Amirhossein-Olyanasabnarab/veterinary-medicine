@@ -6,10 +6,10 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class VetVontroller : ControllerBase
+    public class VetController : ControllerBase
     {
         private readonly IVetService _vetService;
-        public VetVontroller(IVetService vetService)
+        public VetController(IVetService vetService)
         {
             _vetService = vetService;
         }

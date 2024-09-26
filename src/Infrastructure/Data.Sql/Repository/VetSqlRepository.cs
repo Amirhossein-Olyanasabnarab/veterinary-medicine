@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using Data.Sql.Context;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,14 @@ namespace Data.Sql.Repository
 {
     public class VetSqlRepository : IVetRepository
     {
-       
+        private readonly ApplicationContext _contex;
+        public VetSqlRepository(ApplicationContext context)
+        {
+            _contex = context;
+        }
         public Vet GetVetById(Guid id)
         {
-            return new Vet
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "Amir",
-                LastName = "Olyanasab",
-                Specialty = "All kind of pets"
-            };
+            return _contex.Vets.FirstOrDefault(x => x.Id == id);
         }
     }
 }
