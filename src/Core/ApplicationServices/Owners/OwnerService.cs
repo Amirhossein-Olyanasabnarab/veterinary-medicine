@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,25 @@ namespace ApplicationServices.Owners
         {
             _unitOfWork = unitOfWork;
         }
-        public OwnerDto AddNewOwner(string firstName, string lastName, string phoneNumber)
+
+        public async Task<OwnerDto> AddNewOwner(string firstName, string lastName, string phoneNumber)
         {
-            _unitOfWork.Owners.AddNewOwner(firstName, lastName, phoneNumber);
-            return new OwnerDto()
+            var owner = new Owner()
             {
                 FirstName = firstName,
                 LastName = lastName,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                CreatedDate = DateTime.Now,
+            };
+
+            await _unitOfWork.Owners.AddOwnerAsync(owner);
+            await _unitOfWork.CompleteAsync();
+
+            return new OwnerDto
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                PhoneNumber = phoneNumber,
             };
         }
     }

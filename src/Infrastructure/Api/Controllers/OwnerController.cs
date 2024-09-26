@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("[controller]/[action]")]
+    [Route("api/[controller]")]
     public class OwnerController: ControllerBase
     {
         private readonly IOwnerService _ownerService;
@@ -12,10 +12,13 @@ namespace Api.Controllers
         {
             _ownerService = ownerService;
         }
-        [HttpPost(Name = "AddNewOwner")]
-        public OwnerDto Add()
+        [HttpPost]
+        public async Task<ActionResult<OwnerDto>> AddOwner([FromBody] OwnerDto ownerDto)
         {
-            return View();
+            if(!ModelState.IsValid) 
+                return BadRequest(ModelState);
+            var owner = await _ownerService.AddNewOwner(ownerDto.FirstName, ownerDto.LastName, ownerDto.PhoneNumber);
+            return Ok(owner);
         }
     }
 }

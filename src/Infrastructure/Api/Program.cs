@@ -1,3 +1,4 @@
+using ApplicationServices.Owners;
 using ApplicationServices.Vets;
 using Contracts;
 using Data.Sql;
@@ -14,7 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVetService, VetService>();
+builder.Services.AddScoped<IOwnerService, OwnerService>();
 builder.Services.AddScoped<IVetRepository, VetSqlRepository>();
+builder.Services.AddScoped<IOwnerRepository, OwnerSqlRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDbContext<ApplicationContext>

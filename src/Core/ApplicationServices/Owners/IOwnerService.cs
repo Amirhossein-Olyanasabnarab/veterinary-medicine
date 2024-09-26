@@ -8,6 +8,6 @@ namespace ApplicationServices.Owners
 {
     public interface IOwnerService 
     {
-        OwnerDto AddNewOwner(string firstName, string lastName, string phoneNumber);
+        Task<OwnerDto> AddNewOwner(string firstName, string lastName, string phoneNumber);
     }
 }
