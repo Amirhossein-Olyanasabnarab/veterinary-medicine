@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Data.Sql.Context;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,9 @@ namespace Data.Sql.Repository
         {
             _context = context;
         }
-        public string AddNewOwner()
+        public async Task AddOwnerAsync(Owner owner)
         {
-            _context.SaveChanges();
-            return "OK";
+           await  _context.Owners.AddAsync(owner);
         }
     }
 }
