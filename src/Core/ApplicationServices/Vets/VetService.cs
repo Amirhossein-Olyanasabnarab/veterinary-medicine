@@ -9,14 +9,14 @@ namespace ApplicationServices.Vets
 {
     public class VetService : IVetService
     {
-        private readonly IVetRepository _vetRepository;
-        public VetService(IVetRepository vetRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public VetService(IUnitOfWork unitOfWork)
         {
-            _vetRepository = vetRepository;
+            _unitOfWork = unitOfWork;
         }
         public VetDto GetVetById(Guid id)
         {
-            var vet = _vetRepository.GetVetById(id);
+            var vet = _unitOfWork.Vets.GetVetById(id);
             if (vet == null)
                 throw new Exception("There doesn't exist any vet.");
             return new VetDto

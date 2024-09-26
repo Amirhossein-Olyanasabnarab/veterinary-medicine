@@ -15,7 +15,7 @@ namespace Data.Sql
         {
             _context = context;
         }
-        public IVetRepository VetRepository { get ; set; }
+        public IVetRepository Vets { get ; set; }
 
         public void SaveChange()
         {
