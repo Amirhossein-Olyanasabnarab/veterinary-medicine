@@ -17,9 +17,12 @@ namespace Data.Sql.Repository
             _context = context;
         }
 
-        public void AddOwner(Owner owner)
+        public async Task<Owner> AddOwnerAsync(Owner owner)
         {
-            _context.Owners.Add(owner);
+            //_context.AddAsync(owner);
+            _context.Set<Owner>().Add(owner);
+            await _context.SaveChangesAsync();
+            return owner;
         }
     }
 }
