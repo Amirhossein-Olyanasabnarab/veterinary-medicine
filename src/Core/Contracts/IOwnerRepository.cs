@@ -10,5 +10,6 @@ namespace Contracts
     public interface IOwnerRepository
     {
         Owner AddNewOWner(Owner owner);
+        Owner GetOwnerById(Guid ownerId);
     }
 }

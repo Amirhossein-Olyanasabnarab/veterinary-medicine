@@ -22,5 +22,10 @@ namespace Data.Sql.Repository
             _context.Owners.Add(owner);
             return owner;
         }
+
+        public Owner GetOwnerById(Guid ownerId)
+        {
+            return _context.Owners.FirstOrDefault(i => i.Id == ownerId);
+        }
     }
 }

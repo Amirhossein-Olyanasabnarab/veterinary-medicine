@@ -31,5 +31,22 @@ namespace ApplicationServices.Owners
             _unitOfWork.SaveChanges();
             return ownerDto;
         }
+
+        public OwnerDto GetOwnerDtoById(Guid ownerId)
+        {
+            var owner = _unitOfWork.Owners.GetOwnerById(ownerId);
+            if (owner == null)
+            {
+                throw new Exception("Owner was not found");
+            }
+                return new OwnerDto()
+                {
+                    FirstName = owner.FirstName,
+                    LastName = owner.LastName,
+                    Email = owner.Email,
+                    PhoneNumber = owner.PhoneNumber,
+                };
+
+        }
     }
 }

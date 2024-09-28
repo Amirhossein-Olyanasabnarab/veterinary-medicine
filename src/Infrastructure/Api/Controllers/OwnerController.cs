@@ -25,5 +25,11 @@ namespace Api.Controllers
             var createdOwner = _ownerService.CreateNewOwner(ownerDto);
             return Ok(createdOwner);
         }
+
+        [HttpGet("{id}")]
+        public OwnerDto GetOwnerById(Guid id) 
+        {
+            return _ownerService.GetOwnerDtoById(id);
+        }
     }
 }

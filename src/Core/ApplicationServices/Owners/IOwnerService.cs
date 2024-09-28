@@ -10,5 +10,6 @@ namespace ApplicationServices.Owners
     public interface IOwnerService 
     {
         OwnerDto CreateNewOwner(OwnerDto owner);
+        OwnerDto GetOwnerDtoById(Guid ownerId);
     }
 }
