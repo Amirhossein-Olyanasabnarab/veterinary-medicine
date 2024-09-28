@@ -16,23 +16,9 @@ namespace ApplicationServices.Owners
             _unitOfWork = unitOfWork;
         }
 
-        public OwnerDto AddOwner(string name, string family, string phone)
+        public async Task<Owner> CreateOwnerAsync(Owner owner)
         {
-            var owner = new Owner()
-            {
-                FirstName = name,
-                LastName = family,
-                PhoneNumber = phone,
-                CreatedDate = DateTime.Now,
-            };
-            _unitOfWork.Owners.AddOwner(owner);
-            _unitOfWork.SaveChanges();
-            return new OwnerDto
-            {
-                FirstName = owner.FirstName,
-                LastName = owner.LastName,
-                PhoneNumber = owner.PhoneNumber,
-            };
+            return await _unitOfWork.Owners.AddOwnerAsync(owner);
         }
     }
 }
