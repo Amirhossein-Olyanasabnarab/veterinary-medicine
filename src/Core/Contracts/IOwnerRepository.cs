@@ -11,5 +11,6 @@ namespace Contracts
     {
         Owner AddNewOWner(Owner owner);
         Owner GetOwnerById(Guid ownerId);
+        Owner GetOwnerByFamily(string ownerFamily);
     }
 }

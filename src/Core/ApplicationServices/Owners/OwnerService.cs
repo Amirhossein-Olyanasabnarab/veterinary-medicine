@@ -48,5 +48,21 @@ namespace ApplicationServices.Owners
                 };
 
         }
+
+        public OwnerDto GetOwnerDtoByOwneerByLastName(string lastName)
+        {
+            var owner = _unitOfWork.Owners.GetOwnerByFamily(lastName);
+            if (owner == null)
+            {
+                throw new Exception("Owner was not found");
+            }
+            return new OwnerDto()
+            {
+                FirstName = owner.FirstName,
+                LastName = owner.LastName,
+                Email = owner.Email,
+                PhoneNumber = owner.PhoneNumber,
+            };
+        }
     }
 }

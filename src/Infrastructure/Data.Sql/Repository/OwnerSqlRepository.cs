@@ -23,6 +23,12 @@ namespace Data.Sql.Repository
             return owner;
         }
 
+        public Owner GetOwnerByFamily(string ownerFamily)
+        {
+            return _context.Owners.FirstOrDefault(i => i.LastName == ownerFamily);
+            
+        }
+
         public Owner GetOwnerById(Guid ownerId)
         {
             return _context.Owners.FirstOrDefault(i => i.Id == ownerId);
