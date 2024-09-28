@@ -9,6 +9,6 @@ namespace Contracts
 {
     public interface IOwnerRepository
     {
-        Task<Owner> AddOwnerAsync(Owner owner);
+        Owner AddNewOWner(Owner owner);
     }
 }

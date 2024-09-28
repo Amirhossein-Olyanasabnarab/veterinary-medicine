@@ -16,14 +16,14 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Owner>> CreateOwner([FromBody] Owner owner)
+        public IActionResult CreatedOwner(OwnerDto ownerDto) 
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var createdOwner = await _ownerService.CreateOwnerAsync(owner);
-            return createdOwner;
+            var createdOwner = _ownerService.CreateNewOwner(ownerDto);
+            return Ok(createdOwner);
         }
     }
 }

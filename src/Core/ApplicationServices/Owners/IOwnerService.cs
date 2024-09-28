@@ -9,6 +9,6 @@ namespace ApplicationServices.Owners
 {
     public interface IOwnerService 
     {
-        Task<Owner> CreateOwnerAsync(Owner owner);
+        OwnerDto CreateNewOwner(OwnerDto owner);
     }
 }
