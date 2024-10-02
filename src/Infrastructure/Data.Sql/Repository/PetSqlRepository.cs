@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Data.Sql.Repository
 {
-    public class IPetSqlRepository : IPetRepository
+    public class PetSqlRepository : IPetRepository
     {
         private readonly ApplicationContext _context;
-        public IPetSqlRepository(ApplicationContext context)
+        public PetSqlRepository(ApplicationContext context)
         {
             _context = context;
         }
