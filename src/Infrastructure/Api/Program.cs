@@ -18,6 +18,7 @@ builder.Services.AddScoped<IVetService, VetService>();
 builder.Services.AddScoped<IOwnerService, OwnerService>();
 builder.Services.AddScoped<IVetRepository, VetSqlRepository>();
 builder.Services.AddScoped<IOwnerRepository, OwnerSqlRepository>();
+builder.Services.AddScoped<IPetRepository, PetSqlRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDbContext<ApplicationContext>
