@@ -10,6 +10,7 @@ namespace Contracts
     {
         IVetRepository Vets { get; set; }
         IOwnerRepository Owners { get; set; }
+        IPetRepository  Pets { get; set; }
         void SaveChanges();
     }
 }
