@@ -25,13 +25,19 @@ namespace Data.Sql.Repository
 
         public Owner GetOwnerByFamily(string ownerFamily)
         {
-            return _context.Owners.FirstOrDefault(i => i.LastName == ownerFamily);
+            var owner = _context.Owners.FirstOrDefault(o => o.LastName == ownerFamily);
+            return owner;
             
         }
 
         public Owner GetOwnerById(Guid ownerId)
         {
             return _context.Owners.FirstOrDefault(i => i.Id == ownerId);
+        }
+
+        public Owner GetOwnerByName(string ownerName)
+        {
+            return _context.Owners.FirstOrDefault(o => o.FirstName == ownerName);
         }
     }
 }

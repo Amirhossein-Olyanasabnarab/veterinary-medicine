@@ -12,5 +12,6 @@ namespace ApplicationServices.Owners
         OwnerDto CreateNewOwner(OwnerDto owner);
         OwnerDto GetOwnerDtoById(Guid ownerId);
         OwnerDto GetOwnerDtoByOwneerByLastName(string lastName);
+        OwnerDto GetOwnerDtoByName(string name);
     }
 }

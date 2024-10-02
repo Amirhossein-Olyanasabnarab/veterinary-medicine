@@ -32,10 +32,16 @@ namespace Api.Controllers
             return _ownerService.GetOwnerDtoById(id);
         }
 
-        [HttpGet("{LastName}")]
+        [HttpGet("/lastname")]
         public OwnerDto GetOwnerByLastName(string lastName) 
         {
             return _ownerService.GetOwnerDtoByOwneerByLastName(lastName);
+        }
+
+        [HttpGet("/name",Name = "GetOwnerByName")]
+        public OwnerDto GetOwnerByName(string name)
+        {
+            return _ownerService.GetOwnerDtoByName(name);
         }
     }
 }
