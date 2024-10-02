@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    public interface IPerRepository
+    public interface IPetRepository
     {
         Pet CreatePet(Pet pet);
     }
